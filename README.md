@@ -18,6 +18,7 @@
 
 ## Init folder structure
 
+```
 /
 ├── capacitor.config.ts         # Capacitor configuration for iOS/Android
 ├── knexfile.ts                 # Knex configuration for Neon DB
@@ -37,19 +38,17 @@
     │   │   ├── login/
     │   │   └── register/
     │   ├── (dashboard)/        # Route Group: Web App for Admins & Coaches
-    │   │   ├── [tenantId]/     # Multi-tenant routing (e.g., /dashboard/crossfit-poa/...)
-    │   │   │   ├── schedule/   
-    │   │   │   ├── members/    
-    │   │   │   └── layout.tsx  # Sidebar/Navbar for the gym dashboard
+    │   │   └── [tenantId]/     # Multi-tenant routing (e.g., /dashboard/crossfit-poa/...)
+    │   │       ├── schedule/
+    │   │       ├── members/
+    │   │       └── layout.tsx  # Sidebar/Navbar for the gym dashboard
     │   └── (mobile)/           # Route Group: Capacitor App for Gym Members
     │       ├── check-in/       # Mobile-optimized check-in screen
     │       ├── wods/           # Mobile view of daily workouts
     │       └── layout.tsx      # Bottom tab navigation for mobile users
-    │
     ├── components/             # Dumb/Shared UI Components (Buttons, Modals, Cards)
     │   ├── ui/                 # Base UI elements (e.g., shadcn/ui components)
     │   └── layouts/            # Reusable layout wrappers
-    │
     ├── features/               # Domain-Driven Logic (The core of your SaaS)
     │   ├── tenants/            # Gym management, branding, tenant isolation logic
     │   ├── users/              # Roles (Admin, Coach, Member), profiles, permissions
@@ -57,16 +56,15 @@
     │   ├── wods/               # Workout definitions, exercise logging
     │   ├── plans/              # Subscription plans, payment gateway integration hooks
     │   └── notifications/      # Future: Push notification payload builders
-    │
     ├── lib/                    # Core Utilities and Configs
     │   ├── db.ts               # Knex initialization and Neon connection instance
     │   ├── payments.ts         # Payment gateway client (e.g., Stripe or Mercado Pago)
     │   ├── capacitor.ts        # Capacitor device detection (isWeb vs isNative)
     │   └── utils.ts            # General helpers (date formatting, classNames)
-    │
     └── types/                  # Global TypeScript Definitions
         ├── database.d.ts       # Types reflecting your Neon DB schema
         └── index.d.ts
+```
 
 ### Getting started
 
